@@ -1,0 +1,39 @@
+#content{
+	padding-top: 88px;
+}
+table{
+	width: 100%;
+}
+table{
+	border-right: 1px solid #efefef;
+
+}
+table tbody tr:hover,table tbody tr.selected{
+	background: #7c7c7c;
+}
+
+table td{
+	border-bottom: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+	text-align: center;
+}
+td .ipt{
+	width: 50px;
+}
+table th{
+	background: #e5412d;
+	
+}
+table th,table td{
+	padding: 8px;
+}
+.img-box img{
+	width: 82px;
+	height: 100%;
+	float: left;
+	padding: 2px;
+	border: 1px solid #efefef;
+}
+.selected:hover{
+	background: #7c7c7c;
+}

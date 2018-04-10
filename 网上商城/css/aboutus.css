@@ -1,0 +1,102 @@
+/*content开始*/
+#content{
+	padding-top: 88px;
+	margin-bottom: 15px;
+}
+
+#content .title{
+	font-size: 24.5px;
+	width: 960px;
+	height: 35px;
+	margin-bottom: 15px;
+	color: #7c7c7c;
+}
+#content .title-second{
+	font-size: 50%;
+	margin:0 10px;
+}
+#slogan{
+	background: #f4f4f4;
+	height: 30px;
+	text-align: center;
+	font-size: 30px;
+	border: 1px solid #efefef;
+}
+#slogan h3{
+	height: 30px;
+	font-size: 21px;
+	text-align: center;
+}
+#user-list li{
+	display: inline-block;
+	width: 300px;
+	height: 390px;
+	padding: 2px;
+	padding: 4px 4px;
+	border: 1px solid #efefef;
+	font-family: 'Roboto', sans-serif;
+}
+#user-list img{
+	width: 300px;
+	height: 200px;
+}
+#user-list h4{
+	font-weight: 400;
+	font-size: 17.5px;
+}
+#user-list p{
+	color: #7c7c7c;
+	font-size: 13px;
+}
+#woziji{
+	
+	height: 300px;
+	overflow: hidden;
+}
+#woziji h4{
+	margin-bottom: 5px;
+	font-size: 17.5;
+}
+#woziji p{
+	font-size: 13px;
+}
+#woziji a{
+	font-size: 13px;
+	color: #e5412d;
+}
+#wozijione{
+	float: left;
+	width: 400px;
+	height: 300px;
+	
+}
+#wozijitwo{
+	float: left;
+	width: 400px;
+	height: 300px;
+	}
+.carousel{
+	width: 472px;
+	height: 224px;
+	overflow: hidden;
+}
+#content .carousel-img{
+	width: 1416px;
+	height: 224px;
+
+	
+}
+.separator{
+	background: #f4f4f4;
+	margin:20px 0;
+	height: 2px;
+	position: relative;
+	text-align: center;
+}
+.separator .glyphicon{
+	font-size: 40px;
+	position: absolute;
+	top:50%;
+	margin-top: -15px;
+}
+/*content结束*/
