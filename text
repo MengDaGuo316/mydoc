@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		/**{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#content{
+			margin: 100px auto;
+			width: 680px;
+			position: relative;
+		}
+		#img-box img{
+			display: none;
+		}
+		#img-box img.selected{
+			display: block;
+		}
+		#tab-box{
+			position: absolute;
+			right:10px;
+			bottom: 10px;
+		}
+		#tab-box li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			background: #000;
+			color: #fff;
+			margin-right: 5px;
+		}
+		#tab-box li.selected{
+			background: orange;
+		}
+		#arrow-box{
+			position: absolute;
+			left:10px;
+			bottom: 10px;
+		}
+		#arrow-box span{
+			background: #000;
+			color: #fff;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			display: inline-block;
+		}*/
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			animation: run 2s linear 1s 3 forwards;
+		}
+		@keyframes run{
+			0%{
+
+			}
+			50%{
+				width: 300px;
+
+			}
+			100%{
+				width: 300px;
+				height: 300px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+	<!-- <div id="content">
+		<div id="img-box">
+			<img class="selected" src="img/3.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+			<img src="img/3.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+		</div>
+		<ul id="tab-box">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="arrow-box">
+			<span id="prev">&lt;</span>
+			<span id="next">&gt;</span>
+		</div> -->
+	</div>
+
+	<script>
+		// var oContent=document.getElementById('content');
+		// var aLi=oContent.getElementsByTagName('li');
+		// var aImg=oContent.getElementsByTagName('img');
+		// var oNext = document.getElementById('next'),
+		// 	oPrev = document.getElementById('prev'),
+		// 	timer;
+
+		// for(i=0;i<aLi.length;i++){
+		// 	aLi[i].index=i;
+		// 	aLi[i].onclick=function(){
+		// 		changeImg(this.index);
+
+		// 	}
+			
+		// }
+		// var iNow=0;
+		// oNext.onclick=function(){
+		// 	iNow++;
+		// 	if(iNow==aLi.length){
+		// 		iNow=0;
+		// 	}
+		// 	changeImg(iNow);
+		// }
+		// oPrev.onclick=function(){
+		// 	iNow--;
+		// 	if(iNow==-1){
+		// 		iNow=aLi.length-1;
+		// 	}
+		// 	changeImg(iNow);
+		// }
+		// function changeImg(idx){
+		// 	for(var j=0;j<aLi.length;j++){
+		// 			aLi[j].className="";
+		// 			aImg[j].style.display="none";
+		// 		}
+		// 			aLi[idx].className='selected';
+		// 			aImg[idx].style.display='block';
+		// 	}
+		// var timer=setInterval(function(){
+		// 	oNext.onclick();
+		// },1000);
+		// oContent.onmouseover=function(){
+		// 	clearInterval(timer);
+		// }
+		// oContent.onmouseout=function(){
+		// 	timer=setInterval(function(){
+		// 	oNext.onclick();
+		// },1000);
+		// }
+		
+	</script>
+	
+
+	
+</body>
+</html>
