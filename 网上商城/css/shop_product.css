@@ -312,5 +312,9 @@
 	color:#000;
 	
 }
-
+@keyframes hide{
+	100%{
+		opacity:0;
+	}
+}
 
