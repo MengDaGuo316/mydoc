@@ -105,15 +105,48 @@ oDialogPrev.onclick=function(){
 		iNow=aDialogLi.length-1;
 	}
 	var prevLi=aDialogLi[iNow];
-	oDialogImg.src=prevLi.getElementsByTagName('img')[0].src;
+	var prevSrc=prevLi.getElementsByTagName('img')[0].src;
+	var oImg=document.createElement('img');
+	oImg.src=prevSrc;
+	var oldImg=oDialogBody.children[0];
+	oDialogBody.insertBefore(oImg,oldImg);
+	oldImg.style.animation='hide 1s ease forwards';
+	setTimeout(function(){
+		oDialogBody.removeChild(oldImg);
+	},1000);
+
+
+
+
+
+	// oDialogImg.src=prevLi.getElementsByTagName('img')[0].src;
+
+
+
 }
 oDialogNext.onclick=function(){
 	iNow++;
 	if(iNow==aDialogLi.length){
 		iNow=0;
 	}
-	var prevLi=aDialogLi[iNow];
-	oDialogImg.src=prevLi.getElementsByTagName('img')[0].src;
+	var nextLi=aDialogLi[iNow];
+
+	var nextSrc=nextLi.getElementsByTagName('img')[0].src;
+	var oImg=document.createElement('img');
+	oImg.src=nextSrc;
+	var oldImg=oDialogBody.children[0];
+	
+	oDialogBody.insertBefore(oImg,oldImg);
+	oldImg.style.animation='hide 1s ease forwards';
+	setTimeout(function(){
+		oDialogBody.removeChild(oldImg);
+	},1000);
+
+
+
+
+
+	// oDialogImg.src=nextLi.getElementsByTagName('img')[0].src;
 }
 var timer='';
 oSlideBtn.onclick=function(){
@@ -134,9 +167,6 @@ oSlideBtn.onclick=function(){
 
 	
 		
-
-
-
 
 
 
