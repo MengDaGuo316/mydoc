@@ -20,9 +20,10 @@
 			<textarea id="comment" rows="8" cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
 		</div>
 	</div>
+	<script src="jquery/jquery-1.12.4.js"></script>
 	<script>
 		$('.bigger').on('click',function(){
-			if($('#comment').height()<500&&!$('#comment').is(':animated')){
+			if($('#comment').height()<500 && !$('#comment').is(':animated')){
 				// $('#comment').height($('#comment').height()+50);
 				$('#comment').animate({
 					height:'+=50'
@@ -31,9 +32,10 @@
 			}
 			
 		})
+</script>
+			
 
-
-	</script>
+	
 
 </body>
 </html>

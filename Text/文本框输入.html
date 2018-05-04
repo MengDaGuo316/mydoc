@@ -28,19 +28,24 @@
 			</div>
 		</fieldset>
 	</form>
+	<script src="jquery/jquery-1.12.4.js"></script>
 	<script>
 		$(':input').on('focus',function(){
-			$('this').addClass('focus');
+			$(this).addClass('focus');
 			//下面的试一下
 			if(this.value==this.defaultValue){
 				this.value='';
 			}
 		}).on('blur',function(){
-			$('this').removeClass('focus');
-			if($('this').val()){
-				$('this').val('this.sdefaultValue');
+			$(this).removeClass('focus');
+			if(!$(this).val()){
+				$(this).val(this.defaultValue);
 			}
 		})
+
+		
 	</script>
 </body>
 </html>
+
+
