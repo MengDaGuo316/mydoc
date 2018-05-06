@@ -4,10 +4,46 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+<style>
+	.tip{
+		border:1px solid #000;
+		position: absolute;
+	}
+</style>
 <body>
 	<p><a href="#" class="tooltip" title="超链接提示1">超链接提示1</a></p>
 	<p><a href="#" class="tooltip" title="超链接提示2">超链接提示2</a></p>
 	<p><a href="#" title="自带提示1">自带提示1</a></p>
 	<p><a href="#" title="自带提示2">自带提示2</a></p>
+	<script src="jquery/jquery-1.12.4.js"></script>
+	<script>
+		$('.tooltip').on("mouseover",function(e){
+			var $tip = $('<span class="tip">'+this.title+'</span>')
+			.css({
+				left:e.pageX+20,
+				top:e.pageY+20
+			});
+			this.title="";
+			$('body').append($tip);
+		})
+		$('.tooltip').on('mouseout',function(e){
+			this.title = $('.tip').html();
+			$('.tip').remove();
+		});
+
+		$('.tooltip').on('mousemove',function(e){
+			$('.tip').css({
+				left:e.pageX+20,
+				top:e.pageY+20
+			})
+		})
+   //  $('.tooltip').on("mousemove",function(e){
+   //      $('.tip').css({
+   //          left:e.pageX+20,
+   //          top: e.pageY+20
+   //      });
+   //  });
+
+	</script>
 </body>
 </html>
