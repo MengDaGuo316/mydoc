@@ -13,6 +13,7 @@ $('tbody tr').each(function(index,elem){
 	})
 		$('#checkAll').prop('checked',flag);
 	});
+
 $('#checkAll').on('click',function(){
 	if($(this).prop('checked')){
 		$('tbody tr').addClass('selected');
