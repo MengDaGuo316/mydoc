@@ -127,7 +127,7 @@ img{
 }
 #nav .nav-menu>li.menu-btn:hover .sub-menu{
 	display: block;
-	animation:show 1s ease forwards;
+	/*animation:show 1s ease forwards;*/
 	/*display: block;
 	animation:show 2s ease forwards;*/
 	
