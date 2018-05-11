@@ -59,7 +59,7 @@ $('.dialog-next').on('click',function(){
 	}
 	var $nextImgSrc=$('.small-img li').eq(iNow).find('img').attr('src');
 	$('.dialog-body img').eq(0).before('<img src="'+$nextImgSrc+'"></img>');
-	$('.dialog-body img').eq(1).fadeOut(2000,function(){
+	$('.dialog-body img').eq(0).siblings().fadeOut(2000,function(){
 		$(this).remove();
 	})
 })
