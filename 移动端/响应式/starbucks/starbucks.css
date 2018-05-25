@@ -1,0 +1,104 @@
+*{
+	margin:0;
+	padding: 0;
+}
+a{
+	text-decoration:none;
+}
+#header{
+	height: 100px;
+	display: -webkit-box;
+	width: 100%;
+}
+#menu{
+	-webkit-box-flex:5;
+	padding:30px 0 0 37px;
+	
+}
+#menu p{
+	
+	font-size: 12px;
+	margin:0 0 0 4px;
+}
+
+#logo{
+	-webkit-box-flex:2;
+	width: 0;
+	display: inline-block;
+}
+#logo img{
+	width: 73px;
+	padding:15px 0;
+	text-align: center;
+}
+#login{
+	-webkit-box-flex:5;
+	text-align: right;
+	margin:25px 30px 0 0;
+}
+#login{
+	font-size:16px;
+}
+#login a{
+	color: #b89f7a;
+}
+
+#banner{
+	position: relative;
+}
+#banner img{
+	display: block;
+}
+#banner span{
+	background: #b89f7a;
+	display:block;
+    width: 106px;
+    height: 52px;
+    color: #ffffff;
+	text-align: center;
+	line-height: 52px;
+	position: absolute;
+	bottom: 15px;
+	right:29%;
+}
+#banner img{
+	width: 100%;
+}
+#banner .banner2{
+	display: none;
+}
+
+@media screen and (max-width: 991px){
+	#banner .banner1{
+		display: none;
+	}
+	#banner .banner2{
+		display: block;
+	}
+	#banner span{
+		bottom: 60px;
+		right: 15px;
+	}
+}
+
+@media screen and (max-width:767px){
+	#menu{
+	padding:15px 0 0 37px;
+	
+}
+#login{
+	margin:25px 10px 0 0;
+}
+#login{
+	font-size:12px;
+}
+}
+
+@media screen and (max-width:425px){
+	#logo{
+		width: 0;
+	}
+	#logo img{
+		width: 100%;
+	}
+}
