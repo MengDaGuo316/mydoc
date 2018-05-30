@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.tltle{
+			height: 40px;
+			background-attachment: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click="isShow=!isShow">click</button>
+		<dia v-show="isShow">
+			<span slot="title">
+				标题
+			</span>
+			<span slot="content">
+				注册：<input type="text">
+				密码：<input type="text">
+			</span>
+		</dia>
+	</div>
+	
+	<script src="vue.js"></script>
+	<script type="text/x-template" id="dia">
+		<div>
+			<div class="title">
+				<slot name="title">默认标题</slot>
+			</div>
+			<div>
+				<slot name="content">默认内容</slot>
+			</div>
+		</div>
+		
+		
+	</script>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+			isShow:false
+			},
+			components:{
+				dia:{
+					template:'#dia'
+				}
+			},
+			methods:{
+
+			}
+
+		});
+	</script>
+</body>
+</html>
