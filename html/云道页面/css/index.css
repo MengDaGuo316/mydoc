@@ -69,3 +69,52 @@ a{
 	width: 830px;
 	margin:0 auto;
 }
+.service-bg{
+	margin-top: 40px;
+}
+.service-bg li{
+	width: 320px;
+	height: 510px;
+	
+	float: left;
+	border:1px solid #ccc;
+	
+
+}
+.service-bg li:nth-child(2){
+	margin:0 20px;
+}
+.service-bg img{
+	display: block;
+	width: 300px;
+	height: 250px;
+	margin:5px auto;
+}
+.service-bg h3{
+	text-align: center;
+	height: 40px;
+	
+}
+.service-bg span{
+	display: block;
+	width: 235px;
+	margin:0 auto;
+	font-size: 12px;
+	color:#666;
+}
+.service-bg a{
+	display: block;
+	width: 148px;
+	height: 38px;
+	border:1px solid #ff9412;
+	margin: 30px auto 0;
+	text-align: center;
+	line-height: 38px;
+	font-size: 12px;
+	color:#ff9412;
+	border-radius: 5px;
+}
+.service-bg a:hover{
+	color:#fff;
+	background:#ff9412; 
+}
