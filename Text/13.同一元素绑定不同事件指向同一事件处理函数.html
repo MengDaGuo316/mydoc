@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn1">
+	<script>
+		var btn1=document.getElementById("btn1");
+		btn1.onclick=f1;
+		btn1.onmouseover=f1;
+		btn1.onmouseout=f1;
+		function f1(e){
+			switch(e.type){
+				case "click":alert("哈哈");
+				break;
+				case "mouseover":this.style.background="red";
+				break;
+				case "mouseout":this.style.background="green";
+				break;
+			}
+		};
+	</script>
+</body>
+</html>

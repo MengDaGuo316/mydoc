@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn1">
+	<input type="button" value="干掉第一个" id="btn2">
+	<script>
+		var btn1=document.getElementById("btn1");
+		//绑定事件的兼容
+		function addEventListener(element,type,fn){
+			if(element.addEventListener){
+				element.addEventListener(type,fn,false);
+			}else if(element.attachEvent){
+				element.attachEvent("on"+type,fn);
+			}else{
+				element["on"+type]=fn;
+			}
+		};
+
+		//解绑事件的兼容
+		function removeEventListener(element,type,fnName){
+			if(element.removeEventListener){
+				element.removeEventListener(element,type,false);
+			}else if(element.detachEvent){
+				element.detachEvent("on"+type,fnName);
+			}else{
+				element["on"+type]=null;
+			}
+		};
+
+
+
+
+		function f1(){
+			console.log("第一个");
+		}
+		function f2(){
+			console.log("第二个");
+		}
+		addEventListener(btn1,"click",f1);
+		addEventListener(btn1,"click",f2);
+		btn2.onclick=function(){
+			removeEventListener(btn1,"click",f1);
+		};
+	</script>
+</body>
+</html>
