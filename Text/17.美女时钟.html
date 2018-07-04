@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="dv">
+		<img src="" alt="" id="img">
+	</div>
+	<script>
+		var dv=document.getElementById("dv");
+		var img=document.getElementById("img");
+		function fn(){
+			var dt=new Date();
+			var hour=dt.getHours();
+			var second=dt.getSeconds();
+			hour=hour<10?"0"+hour:hour;
+			second=second<10?"0"+second:second;
+			img.src="meimei/"+hour+"_"+second+".jpg";
+		}
+		fn();
+		setInterval(fn,1000);
+		
+	</script>
+</body>
+</html>
