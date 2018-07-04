@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			width: 220px;
+			height: 220px;
+		}
+		div{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始" id="btn1">
+	<input type="button" value="结束" id="btn2">
+	<div id="dv">
+		<img src="img/theme.gif" alt="">
+		<img src="img/theme.gif" alt="">
+	</div>
+	<script>
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		var dv=document.getElementById("dv");
+		var Timer="";
+		btn1.onclick=function(){
+			Timer=setInterval(function(){
+				var x=parseInt(Math.random()*100+1);
+				var y=parseInt(Math.random()*100+1);
+				dv.style.left=x+"px";
+				dv.style.top=y+"px";
+			},500);
+		};
+		btn2.onclick=function(){
+			clearInterval(Timer);
+		}
+	</script>
+</body>
+</html>
