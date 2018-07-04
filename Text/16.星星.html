@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#dv{
+			width: 600px;
+			height: 600px;
+			border:2px solid pink;
+			position: relative;
+		}
+		span{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="亮起来" id="btn1">
+	<div id="dv">
+		
+	</div>
+	<script>
+		var btn1=document.getElementById("btn1");
+		var dv=document.getElementById("dv");
+		btn1.onclick=function(){
+			dv.innerHTML="<span>4</span>"
+			setInterval(function(){
+				var x=parseInt(Math.random()*600);
+				var y=parseInt(Math.random()*600);
+				dv.firstChild.style.left=x+"px";
+				dv.firstChild.style.top=y+"px";
+			},500)
+		}
+	</script>
+</body>
+</html>
