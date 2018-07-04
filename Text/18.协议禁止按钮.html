@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea name="texta" id="text" cols="30" rows="10"></textarea>
+	<input type="button" value="请阅读(5)" id="btn1" disabled="disabled">
+	<script>
+		var text=document.getElementById("text");
+		var btn1=document.getElementById("btn1");
+		var time=5;
+		var Timer=setInterval(function(){
+		
+			time--;
+			btn1.value="请阅读("+time+")";
+			if(time<=0){
+				clearInterval(Timer);
+				btn1.disabled=false;
+				btn1.value="同意";
+			};
+
+		},1000);
+	</script>
+</body>
+</html>
