@@ -48,22 +48,18 @@
 		    }
 		}
 		function my$(id) {
-    return document.getElementById(id);
-}
+		    return document.getElementById(id);
+		}
 		var txt=document.getElementById("txt");
 		var box=document.getElementById("box");
-		var dv=document.getElementById("dv");
-
+		
 
 		txt.onkeyup=function(){
-			if(dv){
+			if(document.getElementById("dv")){
 			      //删除一次
-			      box.removeChild(dv);
+			      box.removeChild(document.getElementById("dv"));
 			    }
-			 // if(my$("dv")){
-    //   //删除一次
-    //   my$("box").removeChild(my$("dv"));
-    // }
+			 
 			var text=this.value;
 			var tempArr=[];
 			for(var i=0;i<keyWords.length;i++){
@@ -75,19 +71,19 @@
 			 //如果文本框是空的,临时数组是空的,不用创建div
 			 if(this.value.length==0||tempArr.length==0){
 			 	//如果页面中有这个div,删除这个div
-			 	if(dv){
-			 		box.removeChild(dv);
+			 	if(document.getElementById("dv")){
+			 		box.removeChild(document.getElementById("dv"));
 			 	}
 			 	return;
 			 }
 
 			 // if (this.value.length == 0 || tempArr.length == 0) {
-    //   //如果页面中有这个div,删除这个div
-    //   if (my$("dv")){
-    //     my$("box").removeChild(my$("dv"));
-    //   }
-    //   return;
-    // }
+		    //   //如果页面中有这个div,删除这个div
+		    //   if (my$("dv")){
+		    //     my$("box").removeChild(my$("dv"));
+		    //   }
+		    //   return;
+		    // }
 			var dvObj=document.createElement("div");
 			box.appendChild(dvObj);
 			dvObj.id="dv";
