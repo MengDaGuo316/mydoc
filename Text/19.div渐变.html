@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 400px;
+			height: 400px;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+	<input type="button" value="按钮" id="btn1">
+	<script>
+		var div1=document.getElementById("div1");
+		var btn1=document.getElementById("btn1");
+
+		btn1.onclick=function(){
+			var opacity=10;
+			var Timer=setInterval(function(){
+				opacity--;
+				if(opacity<=0){
+					clearInterval(Timer);
+				}
+				div1.style.opacity=opacity/10;
+			},1000);
+			
+		}
+	</script>
+</body>
+</html>
