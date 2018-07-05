@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+
+		<img src="img/bird.png" alt="" id="dv">
+
+	<script>
+		document.onmousemove=function(e){
+			var dv=document.getElementById("dv");
+			dv.style.left=e.clientX+"px";
+			dv.style.top=e.clientY+"px";
+		}
+	</script>
+</body>
+</html>
