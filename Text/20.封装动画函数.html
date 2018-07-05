@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 400px;
+			height: 200px;
+			background: pink;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+	<div id="div">
+		
+	</div>
+	<script>
+		var div=document.getElementById("div");
+		var btn=document.getElementById("btn");
+
+
+		btn.onclick=function(){
+			animate(div,800);
+		}
+		function animate(element,target){
+			clearInterval(element.timeId);
+			element.timeId=setInterval(function(){
+				var current=element.offsetLeft;
+				var step=10;
+				step=current<target?step:-step;
+				current+=step;
+				if(Math.abs(target-current)>Math.abs(step)){
+					element.style.left=current+"px";
+				}else{
+					clearInterval(element.timeId);
+					element.style.left=target+"px";
+				}
+			},20);
+			
+		}
+
+	</script>
+</body>
+</html>
