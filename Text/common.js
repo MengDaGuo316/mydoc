@@ -203,18 +203,3 @@ function removeEventListener(element,type,fn) {
     }
 }
 
- function animate(element, target) {
-      //清理定时器
-      clearInterval(element.timeId);
-      element.timeId = setInterval(function () {
-        //获取元素的当前位置
-        var current = element.offsetLeft;
-        //移动的步数
-        var step = (target-current)/10;
-        step = step>0?Math.ceil(step):Math.floor(step);
-        current += step;
-        element.style.left = current + "px";
-        if(current==target) {
-          //清理定时器
-          clearInterval(element.timeId);
-        }
