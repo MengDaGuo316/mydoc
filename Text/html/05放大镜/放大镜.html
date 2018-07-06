@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    * {
+	      margin: 0;
+	      padding: 0;
+	    }
+
+	    .box {
+	      width: 350px;
+	      height: 350px;
+	      margin: 100px;
+	      border: 1px solid #ccc;
+	      position: relative;
+	    }
+
+	    .big {
+	      width: 400px;
+	      height: 400px;
+	      position: absolute;
+	      top: 0;
+	      left: 360px;
+	      border: 1px solid #ccc;
+	      overflow: hidden;
+	      display: none;
+	    }
+
+	    .mask {
+	      width: 175px;
+	      height: 175px;
+	      background: rgba(255, 255, 0, 0.4);
+	      position: absolute;
+	      top: 0px;
+	      left: 0px;
+	      cursor: move;
+	      display: none;
+	    }
+
+	    .small {
+	      position: relative;
+	    }
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+	  <div class="small">
+	    <img src="images/small.png" width="350" alt=""/>
+	    <div class="mask"></div><!--遮挡层-->
+	  </div>
+	  <div class="big">
+	    <img src="images/big.jpg" width="800" alt=""/>
+	  </div>
+	</div>
+
+	<script src="common.js"></script>
+	<script>
+		var box=my$("box");
+		var small=box.children[0];
+		var mask=small.children[1];
+		var big=box.children[1];
+		var bigImg=big.children[0];
+
+		box.onmouseover=function(){
+			mask.style.display="block";
+			big.style.display="block";
+		};
+		box.onmouseout=function(){
+			mask.style.display="none";
+			big.style.display="none";
+		};
+		small.onmousemove=function(e){
+			
+			var x=e.clientX-(mask.offsetWidth/2)-100;
+			var y=e.clientY-(mask.offsetHeight/2)-100;
+			// console.log(x);
+			//最小范围
+			x=x<0?0:x;
+			y=y<0?0:y;
+			//最大范围
+			x=x>small.offsetWidth-mask.offsetWidth?small.offsetWidth-mask.offsetWidth:x;
+			y=y>small.offsetHeight-mask.offsetHeight?small.offsetHeight-mask.offsetHeight:y;
+
+			//大图移动距离=小图层移动距离*大图最大移动距离/小图层最大移动距离
+			var maxX=bigImg.offsetWidth-big.offsetWidth;
+			var maxY=bigImg.offsetHeight-big.offsetHeight;
+			// console.log(maxX)
+
+			var bigImgMoveX=x*maxX/(small.offsetWidth-mask.offsetWidth);
+			var bigImgMoveY=y*maxY/(small.offsetHeight-mask.offsetHeight);
+
+			mask.style.left=x+"px";
+			mask.style.top=y+"px";
+			bigImg.style.marginLeft=-bigImgMoveX+"px";
+			bigImg.style.marginTop=-bigImgMoveY+"px";
+
+		}
+
+	</script>
+</body>
+</html>
