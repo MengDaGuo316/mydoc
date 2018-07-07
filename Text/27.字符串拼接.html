@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="拼接吧" id="btn">
+	<input type="text" value="">
+	<input type="text" value="">
+	<input type="text" value="">
+	<input type="text" value="">
+	<script>
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			var inputs=document.getElementsByTagName("input");
+			var arr=[];
+			for(var i=0;i<inputs.length;i++){
+				if(inputs[i].type!="button"){
+					arr.push(inputs[i].value);
+				}
+				
+			}
+			console.log(arr.join("|"));
+		}
+		
+
+	</script>
+</body>
+</html>
