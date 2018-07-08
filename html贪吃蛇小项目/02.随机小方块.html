@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.map{
+			width: 960px;
+			height: 600px;
+			position: relative;
+			background-color: green;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="map" id="map">
+		
+	</div>
+	<script>
+		//产生随机数对象
+		(function(window){
+			function Random(){
+
+			};
+			Random.prototype.getRandom=function(min,max){
+				return Math.floor(Math.random()*(max-min)+min);
+			};
+			window.Random=new Random();
+		})(window);
+
+		//产生小方块对象
+		(function(window){
+			var map=document.getElementById("map");
+			function Food(width,height,color){
+				this.width=width||20;
+				this.height=height||20;
+				this.color=color;
+				this.x=0;
+				this.y=0;
+				this.element=document.createElement("div");
+			};
+			Food.prototype.init=function(map){
+				var div=this.element;
+				div.style.width=this.width+"px";
+				div.style.height=this.height+"px";
+				div.style.position="absolute";
+				div.style.backgroundColor=this.color;
+				map.appendChild(div);
+				this.render(map);
+			};
+			Food.prototype.render=function(map){
+				var x=Random.getRandom(0,map.offsetWidth/this.width)*this.width;
+				var y=Random.getRandom(0,map.offsetHeight/this.height)*this.height;
+				this.x=x;
+				this.y=y;
+				var div=this.element;
+				div.style.left=this.x+"px";
+				div.style.top=this.y+"px";
+			};
+			var fd=new Food(20,20,"black");
+			fd.init(map);
+			console.log(fd.x+"===="+fd.y);
+		})(window);
+		
+
+	</script>
+</body>
+</html>
