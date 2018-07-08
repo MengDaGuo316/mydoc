@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="按钮">
+	<div id="dv">
+		
+	</div>
+	<script src="common.js"></script>
+	<script>
+		function ChangeStyle(btnobj,dvobj,json){
+			this.btnobj=btnobj;
+			this.dvobj=dvobj;
+			this.json=json;
+		}
+		ChangeStyle.prototype.init=function(){
+			var that=this;
+			this.btnobj.onclick=function(){
+				for(var key in that.json){
+					that.dvobj.style[key]=that.json[key];
+				}
+			};
+		};
+		var json={"width":"500px","backgroundColor":"pink"};
+		var cs=new ChangeStyle(my$("btn"),my$("dv"),json);
+		cs.init();
+	</script>
+</body>
+</html>
