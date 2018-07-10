@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+
+    img {
+      width: 200px;
+      height: 180px;
+    }
+
+    input {
+      margin-left: 30%;
+    }
+  </style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				<img src="1.jpeg" alt="">
+				<input type="button" value="点赞（1）">
+			</li>
+			<li>
+				<img src="2.jpg" alt="">
+				<input type="button" value="点赞（1）">
+			</li>
+			<li>
+				<img src="3.jpg" alt="">
+				<input type="button" value="点赞（1）">
+			</li>
+		</ul>
+	</div>
+	<script>
+		function fn(){
+			var value=2;
+			return function(){
+				this.value="点赞（"+value+++"）";
+			}
+		};
+		var btn=document.getElementsByTagName("input");
+		for(var i=0;i<btn.length;i++){
+			btn[i].onclick=fn();
+		}
+	</script>
+</body>
+</html>
