@@ -27,6 +27,20 @@
 		console.log(ff());//11
 		console.log(ff());//12
 		console.log(ff());//13
+
+
+		//闭包方法产生三个相同随机数
+		function f2(){
+			var num=parseInt(Math.random()*10);
+			return function(){
+				console.log(num);
+			}
+		};
+		var fx=f2();
+		fx();
+		fx();
+		fx();
+
 	</script>
 </body>
 </html>
