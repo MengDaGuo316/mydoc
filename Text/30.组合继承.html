@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+		};
+		Person.prototype.eat=function(){
+			console.log("大口的吃");
+		};
+		function Student(name,age,sex){
+			Person.call(this,name,age);
+			this.sex=sex;
+		};
+		Student.prototype=new Person();
+		Student.prototype.sayHi=function(){
+			console.log("嗨");
+		};
+		var stu1=new Student("小红","10","nan");
+		console.log(stu1.name,stu1.age,stu1.sex);
+		stu1.sayHi();
+	</script>
+</body>
+</html>
