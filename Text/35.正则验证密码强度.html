@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	  #dv{
+	    width: 300px;
+	    height:200px;
+	    position: absolute;
+	    left:300px;
+	    top:100px;
+	  }
+	  .strengthLv0 {
+	    height: 6px;
+	    width: 120px;
+	    border: 1px solid #ccc;
+	    padding: 2px;
+	  }
+
+	  .strengthLv1 {
+	    background: red;
+	    height: 6px;
+	    width: 40px;
+	    border: 1px solid #ccc;
+	    padding: 2px;
+	  }
+
+	  .strengthLv2 {
+	    background: orange;
+	    height: 6px;
+	    width: 80px;
+	    border: 1px solid #ccc;
+	    padding: 2px;
+	  }
+
+	  .strengthLv3 {
+	    background: green;
+	    height: 6px;
+	    width: 120px;
+	    border: 1px solid #ccc;
+	    padding: 2px;
+	  }
+	</style>
+</head>
+<body>
+
+<div id="dv">
+  <label for="pwd">密码</label>
+  <input type="text" id="pwd" maxlength="16"><!--课外话题-->
+  <div>
+    <em>密码强度：</em>
+    <em id="strength"></em>
+    <div id="strengthLevel" class="strengthLv0"></div>
+  </div>
+</div>
+<script>
+	var pwd=document.getElementById("pwd");
+	var strengthLevel=document.getElementById("strengthLevel");
+	pwd.onkeyup=function(){
+		strengthLevel.className="strengthLv"+(this.value.length>=6?getLv(this.value):0);
+
+		function getLv(pwd){
+			var lv=0;
+			if(/[0-9]/.test(pwd)){
+				lv++;
+			}
+			if(/[a-zA-Z]/.test(pwd)){
+				lv++;
+			}
+			if(/[^0-9a-zA-Z]/.test(pwd)){
+				lv++;
+			}
+			return lv;
+		}
+	}
+</script>
+</body>
+</html>
