@@ -47,24 +47,6 @@
       top: 60px;
     }
   </style>
-  <!-- <script src="../jquery-1.12.4.js"></script>
-  <script>
-    $(function () {
-      $(".nav li").mouseenter(function () {
-        $(this).children("span").stop().animate({top:0});
-        
-        var idx = $(this).index();
-        //让对应的音乐播放, 音乐播放的方法时DOM对象。
-        $("audio").get(idx).load();
-        $("audio").get(idx).play();
-      }).mouseleave(function () {
-        $(this).children("span").stop().animate({top:60});
-      });
-      
-      
-      
-    });
-  </script> -->
 </head>
 <body>
 <div class="nav">
@@ -109,6 +91,27 @@
     $(this).children("span").stop().animate({top:60});
   })
 
+var flag=true;//节流阀
+$(document).on("keydown",function(e){
+  
+ // console.log(code);
+  
+  if(flag){
+    flag=false;
+    var code=e.keyCode;
+    if(code>=49&&code<=57){
+    $(".nav li").eq(code-49).mouseenter();
+  }
+  }
+  
+})
+$(document).on("keyup",function(e){
+  var code=e.keyCode;
+  flag=true;
+  if(code>=49&&code<=57){
+    $(".nav li").eq(code-49).mouseleave();
+  }
+})
 </script>
 </body>
 </html>
