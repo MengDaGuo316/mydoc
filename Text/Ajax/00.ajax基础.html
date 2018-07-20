@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var xhr=new XMLHttpRequest();
+		xhr.open('Get','./xxx.php')
+		xhr.send(null)
+		xhr.onreadystatechange=function(){
+			if(this.readystate===4){
+				console.log(this)
+			}
+		}
+
+
+		// var xhr=new XMLHttpRequest();
+		// xhr.open('Get','./xxx.php')
+		// xhr.send(null)
+		// xhr.onreadystatechange=function(){
+		// 	if(readystate===4){
+		// 		console.log(this)
+		// 	}
+		// }
+	</script>
+</body>
+</html>
