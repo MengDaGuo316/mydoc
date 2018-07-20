@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function callback(done){
+			setInterval(function(){
+				done(Date.now());
+			},1000)
+		};
+		callback(function done(timestape){
+			console.log(timestape/1000/60/60)
+		})
+	</script>
+</body>
+</html>
