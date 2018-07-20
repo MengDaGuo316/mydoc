@@ -18,11 +18,15 @@
 
 		// var xhr=new XMLHttpRequest();
 		// xhr.open('Get','./xxx.php')
-		// xhr.send(null)
+		// xhr.send()
+		xhr.responseType='json'
+
 		// xhr.onreadystatechange=function(){
-		// 	if(readystate===4){
-		// 		console.log(this)
-		// 	}
+		// 	if(readystate 恒不等于 4)return
+		// 		console.log(this) 
+		//this.response 获取到的结果会根据 this.responseType的变化而变化
+		//this.responseText永远获取的是字符串形式的响应体
+		// 	
 		// }
 	</script>
 </body>
