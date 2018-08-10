@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 600px;
+            height: 600px;
+            margin:0 auto;
+            position: relative;
+        }
+        .head{
+            width: 200px;
+            height: 100px;
+            background-color:green;
+            border-radius:100px 100px 0px 0px ;
+
+            position:relative;
+            margin:10px auto;
+        }
+        .head::before,.head::after{
+            content:"";
+            width: 14px;
+            height: 14px;
+            background-color:white;
+            border-radius:7px;
+            position: absolute;
+            top:75px;
+        }
+        .head::before{
+            left:50px;
+
+        }
+        .head::after{
+            right:50px;
+        }
+        .body{
+            overflow: hidden;
+           position: absolute;
+            left:170px;
+
+        }
+        .body-left,.body-right{
+            width: 20px;
+            height: 100px;
+            background-color:green;
+            float:left;
+            border-radius:10px;
+            margin-top:25px;
+
+        }
+        .body-center{
+            width: 200px;
+            height: 150px;
+            background-color:green;
+            float:left;
+            margin:0 10px;
+            border-radius: 0px 0px 20px 20px;
+        }
+        .body-right{
+
+        }
+        .foot{
+            position: absolute;
+            left:170px;
+            margin-top:150px;
+        }
+        .foot-right,.foot-left{
+            height: 80px;
+            width: 20px;
+            background-color:green;
+            float:left;
+            border-radius: 0 0 10px 10px;
+            margin:0px auto;
+
+        }
+        .foot-right{
+            margin-left:50px;
+        }
+        .foot-left{
+            margin-left:85px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="head">
+
+        </div>
+        <div class="body">
+            <div class="body-left">
+
+            </div>
+            <div class="body-center">
+
+            </div>
+            <div class="body-right">
+
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot-left">
+
+            </div>
+            <div class="foot-right">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
