@@ -1,0 +1,74 @@
+<template>
+	<div id="app">
+		<button  @click="totalClick" :class="{active:fToggle}">筛选</button>
+		<button  @click="totalClick1" :class="{active:sToggle}">排序</button>
+			<template v-if="!fToggle&&!sToggle">
+				<p v-for='item in list'>{{item.n}}</p>
+			</template>
+			<template v-else-if='fToggle&&!sToggle'>
+				<p v-for='item in fList'>{{item.n}}</p>
+			</template>
+			<template v-else-if='!fToggle&&sToggle'>
+				<p v-for='item in bb'>{{item.n}}</p>
+			</template>
+			<template v-else='fToggle&&sToggle'>
+				<p v-for='item in cc'>{{item.n}}</p>
+			</template>
+	</div>
+</template>
+<script>
+import _ from "lodash"
+export default{
+			name:'test',
+			data (){
+				return {
+					fToggle:false,
+					sToggle:false,
+					list : [
+						{n:1},
+						{n:2},
+						{n:3},
+						{n:4},
+						{n:5},
+						{n:6},
+						{n:7},
+						{n:3},
+						{n:"啊"},
+						{n:"吧"}
+					],
+					fList:[],
+					bb:[],
+					cc:[]
+				}
+			},
+			methods: {
+				totalClick: function(){
+					 this.fToggle=!this.fToggle;
+					 this.fList=this.list.filter(function(item){
+				 		return item.n>3
+				 	})	
+					if(!this.fToggle){
+						return this.bb=_.orderBy(this.list,['n'],['desc']);
+					}else{
+						return this.cc=_.orderBy(this.fList,['n'],['desc']);	
+					}
+				},
+				totalClick1: function(){
+					 this.sToggle=!this.sToggle;
+					 this.fList=this.list.filter(function(item){
+				 		return item.n>3
+				 	})	
+					if(!this.fToggle){
+						return this.bb=_.orderBy(this.list,['n'],['desc']);
+					}else{
+						return this.cc=_.orderBy(this.fList,['n'],['desc']);	
+					}
+				},
+		}
+}
+</script>
+<style scoped>
+	.active{
+		background-color: pink;
+	}
+</style>
