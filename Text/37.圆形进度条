@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.circleProgress_wrapper{
+		    width: 200px;
+		    height: 200px;
+		    margin: 50px auto;
+		    position: relative;
+		    border:1px solid #ddd;
+		}
+		.right{
+		    right:0;
+		}
+		.left{
+		    left:0;
+		}
+		.wrapper{
+		    width: 100px;
+		    height: 200px;
+		    position: absolute;
+		    top:0;
+		    overflow: hidden;
+		}
+		.circleProgress{
+		    width: 160px;
+		    height: 160px;
+		    border:20px solid #608DAC;
+		    border-radius: 50%;
+		    position: absolute;
+		    top:0;
+		    -webkit-transform: rotate(45deg);
+		}
+		.rightcircle{
+		    border-top:20px solid #7EA41C;
+		    border-right:20px solid #7EA41C;
+		    right:0;
+		}
+		.leftcircle{
+		   border-top:20px solid #7EA41C;
+		    border-right:20px solid #7EA41C;
+		    left:0;
+		    -webkit-transform: rotate(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="circleProgress_wrapper">
+        <div class="wrapper right">
+            <div class="circleProgress rightcircle"></div>
+        </div>
+        <div class="wrapper left">
+            <div class="circleProgress leftcircle"></div>
+        </div>
+	</div>
+</body>
+</html>
